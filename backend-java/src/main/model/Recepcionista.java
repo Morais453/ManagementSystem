@@ -30,7 +30,7 @@ public class Recepcionista extends Usuario {
         } else {
             System.out.println("Lista de Pacientes:");
             for (Usuario paciente : pacientes) {
-                paciente.exibirInfo();
+                paciente.informacaoUsuario();
             }
         }
     }
@@ -40,7 +40,7 @@ public class Recepcionista extends Usuario {
         for (Usuario paciente : pacientes) {
             if (paciente.getEmail().equals(email)) {
                 System.out.println("Usuário encontrado: ");
-                paciente.exibirInfo();
+                paciente.informacaoUsuario();
                 return true;
             }
         }

@@ -3,7 +3,7 @@ package main.model;
 import java.util.Date;
 
 public class Usuario {
-    private int idUsuario;
+    private final int ID_USUARIO;
     private boolean statusUsuario;
     private String nome;
     private String telefone;
@@ -14,7 +14,7 @@ public class Usuario {
 
 
     public Usuario(int idUsuario, String nome, String telefone, String email, String senha) {
-        this.idUsuario = idUsuario;
+        this.ID_USUARIO = idUsuario;
         this.statusUsuario = true;
         this.nome = nome;
         this.telefone = telefone;
@@ -24,12 +24,8 @@ public class Usuario {
     }
 
     // Getters e Setters
-    public int getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public int getID_USUARIO() {
+        return ID_USUARIO;
     }
 
     public String getNome() {
@@ -56,30 +52,9 @@ public class Usuario {
         this.email = email;
     }
 
-    // Método de autenticação mais direto
-    public boolean autenticar(String email, String senha) {
-        if (this.email.equals(email) && this.senha.equals(senha)) {
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    // Lógica de solicitação de consulta
-    public void solicitarConsulta(int idUsuario, Date dataSolicitacao) {
-        // TODO: Implementar lógica de solicitação de consulta
-        System.out.println("Solicitação de consulta registrada para o usuário " + idUsuario + " na data " + dataSolicitacao);
-    }
-
-    // Lógica para verificar consultas do usuário
-    public void verificarMinhasConsultas(int idUsuario) {
-        // TODO: Implementar lógica para exibir consultas do usuário
-        System.out.println("Consultas do usuário " + idUsuario + " verificadas.");
-    }
-
     // Exibir informações do usuário
-    public void exibirInfo() {
-        System.out.println("ID: " + idUsuario);
+    public void informacaoUsuario() {
+        System.out.println("ID: " + ID_USUARIO);
         System.out.println("Nome: " + nome);
         System.out.println("Email: " + email);
         System.out.println("Tipo: " + tipoUsuario);  // Exibe tipo do usuário (Administrador, Paciente, etc.)

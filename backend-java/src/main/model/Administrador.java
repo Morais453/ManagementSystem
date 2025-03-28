@@ -25,7 +25,7 @@ public class Administrador extends Usuario {
     // Método para verificar um usuário pelo ID
     public Usuario verificarUsuario(int id) {
         for (Usuario usuario : usuarios) {
-            if (usuario.getIdUsuario() == id) {
+            if (usuario.getID_USUARIO() == id) {
                 return usuario;
             }
         }
@@ -59,7 +59,7 @@ public class Administrador extends Usuario {
         } else {
             System.out.println("Lista de usuários:");
             for (Usuario usuario : usuarios) {
-                usuario.exibirInfo();
+                usuario.informacaoUsuario();
             }
         }
     }
